@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - MiniShop</title><link rel="stylesheet" href="css/style.css"><script src="js/main.js" defer></script>
+</head>
+<body>
+<header><div class="container">
+    <div class="header-top"><a class="logo" href="index.html">MiniShop</a></div>
+    <nav><a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a class="active" href="cart.html">Giỏ hàng (<span id="cart-count">0</span>)</a><a href="register.html">Đăng ký</a><a href="login.html">Đăng nhập</a><a href="contact.html">Liên hệ</a></nav>
+</div></header>
+<main class="container">
+    <h1 class="page-title">Giỏ hàng của bạn</h1>
+    <section class="panel">
+        <table>
+            <thead><tr><th>Sản phẩm</th><th>Đơn giá</th><th>Số lượng</th><th>Thành tiền</th><th>Thao tác</th></tr></thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        <h2>Tổng tiền: <span id="cart-total" class="price">0 đ</span></h2>
+        <p class="muted">Đây là giỏ hàng demo, chưa thực hiện thanh toán thật.</p>
+        <a class="button" href="index.html">Tiếp tục mua hàng</a>
+    </section>
+</main>
+<footer><div class="container">© 2026 MiniShop</div></footer>
+</body></html>

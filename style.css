@@ -1,0 +1,251 @@
+/* 1. Quy tắc chung */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f5f6f8;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 2. Đầu trang và menu */
+header {
+    background-color: #1769aa;
+    color: white;
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+.search-form {
+    display: flex;
+    gap: 6px;
+    width: min(420px, 55%);
+}
+.search-form input {
+    flex: 1;
+    min-width: 0;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 0 14px;
+}
+nav a {
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+nav a:hover, nav a.active {
+    background-color: #0c4f86;
+}
+
+/* 3. Thành phần giao diện */
+input, textarea, select, button {
+    font: inherit;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c9ced6;
+    border-radius: 6px;
+    background-color: white;
+}
+button, .button {
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    background-color: #1769aa;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+button:hover, .button:hover {
+    background-color: #0c4f86;
+}
+.button.secondary {
+    background-color: #687586;
+}
+button.danger {
+    background-color: #c0392b;
+}
+.page-title {
+    margin: 24px 0 16px;
+    color: #174f7e;
+}
+.panel {
+    background-color: white;
+    padding: 20px;
+    margin: 18px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+.message {
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #e8f5e9;
+    color: #226b2a;
+}
+.error {
+    color: #b42318;
+    font-size: 14px;
+}
+.muted {
+    color: #667085;
+}
+.price {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 18px;
+}
+.old-price {
+    color: #777;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+.tag {
+    display: inline-block;
+    background-color: #e7f2fc;
+    color: #1769aa;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* 4. Bố cục sản phẩm */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+.product-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background-color: #e9edf2;
+}
+.product-info {
+    padding: 14px;
+}
+.product-info h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+.product-info p {
+    margin: 6px 0;
+}
+.product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+.product-actions button, .product-actions a {
+    flex: 1;
+    font-size: 13px;
+    padding: 8px;
+}
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+.form-group {
+    margin-bottom: 14px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #eaf2f8;
+}
+.cart-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.cart-product img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.quantity-input {
+    max-width: 75px;
+}
+footer {
+    margin-top: 36px;
+    padding: 22px 0;
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+}
+
+/* 5. Đáp ứng màn hình nhỏ */
+@media (max-width: 850px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 520px) {
+    .header-top {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .search-form {
+        width: 100%;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    table {
+        font-size: 13px;
+    }
+    th, td {
+        padding: 8px;
+    }
+}
